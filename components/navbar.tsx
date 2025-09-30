@@ -12,7 +12,7 @@ export default function Navbar() {
                 <Link href="/locations" className="hover:text-blue-600 px-6 py-2"> Locations</Link>
                 <Link href="/warnings" className="hover:text-blue-600 px-6 py-2"> Warnings </Link>
                 <Link href="/maps" className="hover:text-blue-600 px-6 py-2"> Maps </Link>
-                <Link href="/maps" className="hover:text-blue-600 px-6 py-2"> Contact us </Link>
+                <Link href="/contact" className="hover:text-blue-600 px-6 py-2"> Contact us </Link>
             </div>
         </div>
     </nav>
