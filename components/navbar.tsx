@@ -14,8 +14,9 @@ export default function Navbar() {
     }, [pathname])
 
   return (
-    <nav className="sticky top-0 z-50 bg-transparent py-4">
+    <nav className="sticky top-0 z-50 bg-transparent py-6">
       <div className="w-full px-8 flex items-center justify-between text-2xl font-semibold text-white"> 
+
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-6 items-center">
           <Link href="/locations" className="hover:text-blue-600 px-6 py-3"> LOCATIONS </Link>
@@ -34,6 +35,16 @@ export default function Navbar() {
           className="md:hidden"
           onClick={() => setIsOpen(!isOpen)}
         >
+        {isOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-blue-400 py-4 text-white">
+          <div className="flex flex-col items-center gap-2 font-semibold">
+            <Link href="/locations" className="hover:text-blue-600 px-6 py-3"> LOCATIONS </Link>
+            <Link href="/maps" className="hover:text-blue-600 px-6 py-3"> MAPS </Link>
+            <Link href="/warnings" className="hover:text-blue-600 px-6 py-3"> WARNINGS </Link>
+            <Link href="/contact" className="hover:text-blue-600 px-6 py-3"> CONTACT </Link>
+          </div>
+        </div>
+      )}
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             fill="none" 
@@ -46,17 +57,6 @@ export default function Navbar() {
           </svg>
         </button>
       </div>
-
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-blue-400 py-4 text-white">
-          <div className="flex flex-col items-center gap-2 font-semibold">
-            <Link href="/locations" className="hover:text-blue-600 px-6 py-3"> LOCATIONS </Link>
-            <Link href="/maps" className="hover:text-blue-600 px-6 py-3"> MAPS </Link>
-            <Link href="/warnings" className="hover:text-blue-600 px-6 py-3"> WARNINGS </Link>
-            <Link href="/contact" className="hover:text-blue-600 px-6 py-3"> CONTACT </Link>
-          </div>
-        </div>
-      )}
     </nav>
   )
 }
