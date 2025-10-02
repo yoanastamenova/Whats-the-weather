@@ -14,7 +14,7 @@ export default function Navbar() {
     }, [pathname])
 
   return (
-    <nav className="sticky top-0 z-50 bg-transparent py-6">
+    <nav className="sticky top-0 z-50">
       <div className="w-full px-8 flex items-center justify-between text-2xl font-semibold text-white"> 
 
         {/* Desktop Menu */}
