@@ -3,7 +3,10 @@ import React from 'react'
 export default function Page() {
   return (
     <div>
-        <h1>Welcome !</h1>
+         <section className="rounded py-8 sm:py-8"> 
+          <h1>WHATS YOUR WEATHER</h1>
+          <p></p>
+          </section>
     </div>
   )
 }
