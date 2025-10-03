@@ -51,7 +51,7 @@ export function Carousel() {
         {carouselItems.map((item, index) => (
           <div
             key={item.id}
-            className={`absolute w-full h-full transition-transform duration-500 ease-in-out ${
+            className={`absolute w-full h-full transition-transform duration-200 ${
               index === currentIndex ? 'translate-x-0' : 'translate-x-full'
             }`}
           >
@@ -61,7 +61,7 @@ export function Carousel() {
               fill
               className="object-cover"
             />
-            <div className="absolute bottom-0 w-full bg-black bg-opacity-50 text-white p-4">
+            <div className="absolute bottom-0 w-full bg-blue-400  bg-opacity-50 text-white p-4">
               <h3 className="text-xl font-bold">{item.title}</h3>
               <p>{item.description}</p>
             </div>
@@ -71,13 +71,13 @@ export function Carousel() {
 
       <button
         onClick={previousSlide}
-        className="absolute left-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-r"
+        className="absolute left-0 top-1/2 bg-blue-400  bg-opacity-50 text-white p-2 rounded-r"
       >
         ←
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-l"
+        className="absolute right-0 top-1/2 bg-blue-400  bg-opacity-50 text-white p-2 rounded-l"
       >
         →
       </button>

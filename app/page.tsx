@@ -8,19 +8,19 @@ import React from 'react'
 
 export default function Page() {
   return (
-    <section className="m-12 py-8 sm:py-2">
-      <div className="flex flex-col-reverse items-center md:flex-row md:justify-center md:gap-20">
-        <div className="text-center md:text-left m">
-          <h1 className="text-6xl md:text-8xl font-bold text-white leading-tight">
+    <section className="container mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col-reverse items-center md:flex-row md:justify-between">
+          <div className="text-center md:text-left">
+          <h1 className="text-6xl max-w md:text-8xl font-bold text-white leading-tight">
             WHATS <br />
             THE <br />
             WEATHER?
           </h1>
-
           <Link href="/maps">
             <Button
               className="text-white 
-              rounded-3xl text-2xl mt-6 
+              rounded-3xl text-2xl my-6 md:ml-12
               py-6 px-6 font-bold bg-blue-400 
               border-2 hover:bg-blue-600">
               Find out more
@@ -37,15 +37,9 @@ export default function Page() {
           priority
         />
       </div>
-      <div className="flex flex-col-reverse items-center md:flex-row md:justify-center md:gap-18 py-8 sm:py-2">
-        <h2 className="text-center md:text-left 
-        text-2xl font-bold text-white">
-          Explore what you can do <br />
-          in one simple click. Our features <br />
-          vary from simple checks <br />
-          to detailed
-          </h2>
+      <div className="flex flex-col-reverse md:flex-row m-w-96 md:justify-center mt-20">
         <Carousel />
+      </div>
       </div>
     </section>
   )
