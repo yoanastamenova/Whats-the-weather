@@ -26,7 +26,7 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-2 px-8">
           <Link href="/" className="hover:text-blue-600 flex items-center gap-2"> 
-            <Image src="/logo.png" height={100} width={100} alt="logo"/>
+            <Image src="/logo.png" height={100} width={100} alt="logo" className="my-4"/>
           </Link>
         </div>
 
