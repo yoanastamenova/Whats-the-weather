@@ -5,7 +5,6 @@ import { Carousel } from "@/components/carousel";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Page() {
   const features = [
@@ -119,7 +118,8 @@ export default function Page() {
                 return (
                   <div 
                     key={index}
-                    className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105"
+                    className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-xl 
+                    border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105"
                   >
                     <div className="flex flex-col items-center text-center space-y-4">
                       <div className="bg-white/20 rounded-full p-4">
