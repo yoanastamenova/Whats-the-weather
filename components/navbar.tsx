@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50">
-      <div className="w-full px-8 flex items-center justify-between text-2xl font-semibold text-white"> 
+      <div className="w-full px-8 flex items-center justify-between text-2xl font-semibold text-black"> 
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-6 items-center">
@@ -36,7 +36,7 @@ export default function Navbar() {
           onClick={() => setIsOpen(!isOpen)}
         >
         {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-blue-400 py-4 text-white">
+        <div className="md:hidden absolute top-full left-0 w-full bg-blue-400 py-4 text-black">
           <div className="flex flex-col items-center gap-2 font-semibold">
             <Link href="/locations" className="hover:text-blue-600 px-6 py-3"> LOCATIONS </Link>
             <Link href="/maps" className="hover:text-blue-600 px-6 py-3"> MAPS </Link>
