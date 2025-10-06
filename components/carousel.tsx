@@ -57,7 +57,7 @@ export function Carousel() {
               fill
               className="object-cover"
             />
-            <div className="absolute bottom-0 w-full bg-blue-400  bg-opacity-50 text-white p-4">
+            <div className="absolute bottom-0 w-full bg-blue-400  bg-opacity-50 text-black p-4">
               <h3 className="text-xl font-bold">{item.title}</h3>
               <p>{item.description}</p>
             </div>
