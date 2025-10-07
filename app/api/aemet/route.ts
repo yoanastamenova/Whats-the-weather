@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const AEMET_BASE_URL = "https://opendata.aemet.es/opendata/api";
-const VALENCIA_IDEMA = "8416Y"; // Valencia Airport
+const VALENCIA_IDEMA = "8416Y"; // Valencia Viveros
 
 export async function GET() {
   const apiKey = process.env.AEMET_API_KEY;
@@ -43,11 +43,12 @@ export async function GET() {
 
     return NextResponse.json({
       city: "Valencia",
-      temperature: station.ta || 0,
-      condition: getCondition(station),
+      temperature: station.ta,
+      updatedAt: station.fint,
       humidity: station.hr,
       pressure: station.pres,
-      windSpeed: station.vv
+      windSpeed: station.vv,
+      condition: getCondition(station)
     });
   } catch (error) {
     console.error("AEMET fetch error:", error);
