@@ -47,6 +47,11 @@ export default function Page() {
   ]
   return (
     <section className="relative min-h-screen overflow-hidden">
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-300 rounded-full blur-3xl"></div>
+      </div>
+
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
@@ -68,12 +73,13 @@ export default function Page() {
             </div>
 
             <div className="relative">
+              <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-2xl"></div>
               <Image
                 src="/Hero.svg"
                 width={500}
                 height={500}
                 alt="Hero illustration"
-                className="relative drop-shadow-2xl"
+                className="relative animate-float drop-shadow-2xl"
                 priority
               />
             </div>
