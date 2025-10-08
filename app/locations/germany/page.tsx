@@ -131,10 +131,10 @@ export default function GermanyPage() {
         <div className="relative">
           <Image
             src="/locations/munich.png"
-            width={200}
-            height={200}
+            width={150}
+            height={150}
             alt="munich"
-            className="relative drop-shadow-2xl"
+            className="relative drop-shadow-2xl m-10"
           />
         </div>
       </div>
