@@ -98,7 +98,7 @@ export default function SpainPage() {
           <h4 className="font-sans ml-1">{data.valencia.condition}</h4>
         </div>
         <div className="relative">
-          <Image src="/orange.png" width={200} height={200} alt="orange" className="relative drop-shadow-2xl"/>
+          <Image src="/locations/orange.png" width={200} height={200} alt="orange" className="relative drop-shadow-2xl"/>
         </div>
       </div>
 
@@ -113,7 +113,7 @@ export default function SpainPage() {
           <h4 className="font-sans ml-1">{data.madrid.condition}</h4>
         </div>
         <div className="relative">
-          <Image src="/madrid.svg" width={200} height={200} alt="madrid" className="relative drop-shadow-2xl"/>
+          <Image src="/locations/madrid.svg" width={200} height={200} alt="madrid" className="relative drop-shadow-2xl"/>
         </div>
       </div>
 
@@ -128,7 +128,7 @@ export default function SpainPage() {
           <h4 className="font-sans ml-1">{data.barcelona.condition}</h4>
         </div>
         <div className="relative">
-          <Image src="/bcn.png" width={200} height={200} alt="barcelona" className="relative drop-shadow-2xl"/>
+          <Image src="/locations/bcn.png" width={200} height={200} alt="barcelona" className="relative drop-shadow-2xl"/>
         </div>
       </div>
     </div>
