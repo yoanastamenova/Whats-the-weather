@@ -4,31 +4,29 @@ import { useEffect, useState } from "react";
 
 type WeatherData = {
   city: string;
-  temperature: number;
+  temperature?: number;
   condition: string;
+  error?: boolean;
 };
 
 type CitiesWeather = {
-  valencia: WeatherData | null;
-  madrid: WeatherData  | null;
-  barcelona: WeatherData | null;
+  valencia: WeatherData;
+  madrid: WeatherData;
+  barcelona: WeatherData;
 }
 
 export default function SpainPage() {
   const [data, setData] = useState<CitiesWeather>({
-    valencia: null,
-    madrid: null,
-    barcelona: null,
+    valencia: { city: "Valencia", condition: "Loading...", error: false },
+    madrid: { city: "Madrid", condition: "Loading...", error: false },
+    barcelona: { city: "Barcelona", condition: "Loading...", error: false },
   });
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     setLoading(true);
-    setError(null);
 
     const cities = ['valencia', 'madrid', 'barcelona'];
-    const failedCities: string[] = [];
 
     const fetchPromises = cities.map(city =>
       fetch(`/api/aemet?${city}=`)
@@ -40,23 +38,25 @@ export default function SpainPage() {
           if (cityData.error) throw new Error(cityData.error);
           setData(prev => ({
             ...prev,
-            [city]: cityData
+            [city]: { ...cityData, error: false }
           }));
         })
         .catch((err) => {
           console.error(`Fetch error for ${city}:`, err);
-          failedCities.push(city);
+          // Set error state for this city
+          setData(prev => ({
+            ...prev,
+            [city]: {
+              city: city.charAt(0).toUpperCase() + city.slice(1),
+              condition: "Data unavailable",
+              error: true
+            }
+          }));
         })
     );
 
     Promise.all(fetchPromises)
-      .finally(() => {
-        // Only show error if ALL cities failed
-        if (failedCities.length === cities.length) {
-          setError("Unable to load weather data. The AEMET service may be experiencing issues.");
-        }
-        setLoading(false);
-      });
+      .finally(() => setLoading(false));
   }, []);
 
   if (loading)
@@ -84,85 +84,53 @@ export default function SpainPage() {
       </div>
     );
 
-if (error)
-    return (
-        <div className="relative mt-20 flex justify-center text-balance">
-            <div className="container flex justify-center">
-                <div
-                    className="text-center p-6 mb-4 font-medium
-                    text-red-800 border border-red-300 rounded-lg bg-red-50
-                    dark:bg-gray-800 dark:text-red-400 dark:border-red-800 w-96 shadow-lg"
-                    role="alert">
-                    <div className="flex items-center justify-center mb-2">
-                        <svg
-                            className="shrink-0 inline w-5 h-5 mr-2"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 20 20">
-                            <path
-                              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 
-                              10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 
-                              1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
-                              />
-                        </svg>
-                        <p className="font-bold text-xl">Error</p>
-                    </div>
-                    <p className="text-base">{error}</p>
-                    <p className="text-sm mt-2 text-red-600">The AEMET weather service may be temporarily unavailable. Please try again later.</p>
-                </div>
-            </div>
-        </div>
-    );
-
-  if (!data) return <p> No data available</p>;
 
   return (
     <div className="container flex flex-col gap-10 justify-center items-center mx-auto relative z-10 m-20">
-      {data.valencia && (
-        <div className="flex justify-center items-center bg-white/20 backdrop-blur-md border-2 border-white/40 rounded-lg h-70 w-180 gap-20">
-          <div className="space-y-2 text-lg">
-            <h2 className="text-4xl font-semibold mb-4">{data.valencia.city}</h2>
-            <h3 className="font-extrabold">Temperature:</h3>
-            <h4 className="font-sans ml-10">{data.valencia.temperature ?? 'N/A'}°C</h4>
-            <h3 className="font-extrabold">Conditions:</h3>
-            <h4 className="font-sans ml-1">{data.valencia.condition}</h4>
-          </div>
-          <div className="relative">
-            <Image src="/orange.png" width={200} height={200} alt="orange" className="relative drop-shadow-2xl"/>
-          </div>
+      <div className={`flex justify-center items-center bg-white/20 backdrop-blur-md border-2 border-white/40 rounded-lg h-70 w-180 gap-20 ${data.valencia.error ? 'opacity-50' : ''}`}>
+        <div className="space-y-2 text-lg">
+          <h2 className="text-4xl font-semibold mb-4">{data.valencia.city}</h2>
+          <h3 className="font-extrabold">Temperature:</h3>
+          <h4 className="font-sans ml-10">
+            {data.valencia.error ? 'N/A' : `${data.valencia.temperature ?? 'N/A'}°C`}
+          </h4>
+          <h3 className="font-extrabold">Conditions:</h3>
+          <h4 className="font-sans ml-1">{data.valencia.condition}</h4>
         </div>
-      )}
+        <div className="relative">
+          <Image src="/orange.png" width={200} height={200} alt="orange" className="relative drop-shadow-2xl"/>
+        </div>
+      </div>
 
-      {data.madrid && (
-        <div className="flex justify-center items-center bg-white/20 backdrop-blur-md border-2 border-white/40 rounded-lg h-70 w-180 gap-20">
-          <div className="space-y-2 text-lg">
-            <h2 className="text-4xl font-semibold mb-4">{data.madrid.city}</h2>
-            <h3 className="font-extrabold">Temperature:</h3>
-            <h4 className="font-sans ml-10">{data.madrid.temperature ?? 'N/A'}°C</h4>
-            <h3 className="font-extrabold">Conditions:</h3>
-            <h4 className="font-sans ml-1">{data.madrid.condition}</h4>
-          </div>
-          <div className="relative">
-            <Image src="/madrid.svg" width={200} height={200} alt="madrid" className="relative drop-shadow-2xl"/>
-          </div>
+      <div className={`flex justify-center items-center bg-white/20 backdrop-blur-md border-2 border-white/40 rounded-lg h-70 w-180 gap-20 ${data.madrid.error ? 'opacity-50' : ''}`}>
+        <div className="space-y-2 text-lg">
+          <h2 className="text-4xl font-semibold mb-4">{data.madrid.city}</h2>
+          <h3 className="font-extrabold">Temperature:</h3>
+          <h4 className="font-sans ml-10">
+            {data.madrid.error ? 'N/A' : `${data.madrid.temperature ?? 'N/A'}°C`}
+          </h4>
+          <h3 className="font-extrabold">Conditions:</h3>
+          <h4 className="font-sans ml-1">{data.madrid.condition}</h4>
         </div>
-      )}
+        <div className="relative">
+          <Image src="/madrid.svg" width={200} height={200} alt="madrid" className="relative drop-shadow-2xl"/>
+        </div>
+      </div>
 
-      {data.barcelona && (
-        <div className="flex justify-center items-center bg-white/20 backdrop-blur-md border-2 border-white/40 rounded-lg h-70 w-180 gap-20">
-          <div className="space-y-2 text-lg">
-            <h2 className="text-4xl font-semibold mb-4">{data.barcelona.city}</h2>
-            <h3 className="font-extrabold">Temperature:</h3>
-            <h4 className="font-sans ml-10">{data.barcelona.temperature ?? 'N/A'}°C</h4>
-            <h3 className="font-extrabold">Conditions:</h3>
-            <h4 className="font-sans ml-1">{data.barcelona.condition}</h4>
-          </div>
-          <div className="relative">
-            <Image src="/bcn.png" width={200} height={200} alt="barcelona" className="relative drop-shadow-2xl"/>
-          </div>
+      <div className={`flex justify-center items-center bg-white/20 backdrop-blur-md border-2 border-white/40 rounded-lg h-70 w-180 gap-20 ${data.barcelona.error ? 'opacity-50' : ''}`}>
+        <div className="space-y-2 text-lg">
+          <h2 className="text-4xl font-semibold mb-4">{data.barcelona.city}</h2>
+          <h3 className="font-extrabold">Temperature:</h3>
+          <h4 className="font-sans ml-10">
+            {data.barcelona.error ? 'N/A' : `${data.barcelona.temperature ?? 'N/A'}°C`}
+          </h4>
+          <h3 className="font-extrabold">Conditions:</h3>
+          <h4 className="font-sans ml-1">{data.barcelona.condition}</h4>
         </div>
-      )}
+        <div className="relative">
+          <Image src="/bcn.png" width={200} height={200} alt="barcelona" className="relative drop-shadow-2xl"/>
+        </div>
+      </div>
     </div>
   );
 }
