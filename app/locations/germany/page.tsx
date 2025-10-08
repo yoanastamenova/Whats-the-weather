@@ -22,7 +22,7 @@ export default function GermanyPage() {
     hamburg: { city: "Hamburg", condition: "Loading...", error: false },
   });
   const [loading, setLoading] = useState(true);
-
+{/* TODO: ADD BUTTON BACK */}
   useEffect(() => {
     setLoading(true);
 
