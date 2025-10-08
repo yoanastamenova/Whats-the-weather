@@ -8,7 +8,7 @@ A modern, interactive weather application built with Next.js that provides real-
 - **RealFeel® Technology** - Advanced algorithm that factors in humidity, wind, and sun intensity to show how the weather actually feels
 - **Severe Weather Alerts** - Stay safe with immediate notifications for storms and extreme conditions
 - **Hourly & Daily Forecasts** - Precise hour-by-hour and extended forecasts
-- **Location-Specific Data** - Currently supporting Spain (Valencia) with AEMET API integration
+- **Location-Specific Data** - Supporting Spain (Valencia) with AEMET API integration and Germany with DWD integration
 - **Responsive Design** - Beautiful UI that works seamlessly across all devices
 - **Glassmorphism UI** - Modern design with frosted glass effects and smooth animations
 
@@ -52,6 +52,7 @@ A modern, interactive weather application built with Next.js that provides real-
 - Node.js 20+ installed
 - npm, yarn, pnpm, or bun package manager
 - AEMET API key (for Spanish weather data)
+- Access to DWD API (for German weather data - no key required)
 
 ### Installation
 
@@ -97,9 +98,10 @@ whats-the-weather/
 ├── app/
 │   ├── api/
 │   │   ├── aemet/          # AEMET API route handler
-│   │   └── germany/        # Germany API route handler
+│   │   └── germany/        # Germany DWD API route handler
 │   ├── locations/
-│   │   └── spain/          # Spain-specific weather pages
+│   │   ├── spain/          # Spain-specific weather pages
+│   │   └── germany/        # Germany-specific weather pages
 │   ├── maps/               # Interactive weather maps
 │   ├── warnings/           # Weather warnings/alerts
 │   ├── contact/            # Contact page
@@ -148,6 +150,14 @@ The application integrates with AEMET (Agencia Estatal de Meteorología) to prov
 - **Station**: Valencia Viveros (IDEMA: 8416Y)
 - **Data Points**: Temperature, humidity, pressure, wind speed, precipitation, sunshine duration
 - **Conditions**: Dynamic weather conditions based on multiple factors (rain, sunshine, humidity)
+
+### DWD API (Germany)
+
+The application also integrates with DWD (Deutscher Wetterdienst) to provide weather data for German locations:
+
+- **Locations**: Munich (München)
+- **Data Points**: Temperature, humidity, pressure, wind speed, precipitation, weather conditions
+- **Features**: Open data API with no authentication required
 
 ## 🎨 Design Features
 
