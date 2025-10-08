@@ -39,7 +39,7 @@ export default function SpainPage() {
         <div role="status">
           <svg
             aria-hidden="true"
-            className="inline w-18 h-18 text-blue-400 animate-spin dark:text-white-600 fill-pink-500"
+            className="inline w-18 h-18 text-black-400 animate-spin dark:text-white-600 fill-pink-500"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,8 @@ if (error)
                         </svg>
                         <p className="font-bold text-xl">Error</p>
                     </div>
-                    <p className="text-base">Change the request and try to submit it again.</p>
+                    <p className="text-base">{error}</p>
+                    <p className="text-sm mt-2 text-red-600">The AEMET weather service may be temporarily unavailable. Please try again later.</p>
                 </div>
             </div>
         </div>
