@@ -12,16 +12,16 @@ type WeatherData = {
 };
 
 type CitiesWeather = {
-  berlin: WeatherData;
-  munich: WeatherData;
-  hamburg: WeatherData;
+  tunis: WeatherData;
+  sfax: WeatherData;
+  sousse: WeatherData;
 };
 
-export default function GermanyPage() {
+export default function TunisPage() {
   const [data, setData] = useState<CitiesWeather>({
-    berlin: { city: "Berlin", condition: "Loading...", error: false },
-    munich: { city: "Munich", condition: "Loading...", error: false },
-    hamburg: { city: "Hamburg", condition: "Loading...", error: false },
+    tunis: { city: "Tunis", condition: "Loading...", error: false },
+    sfax: { city: "Sfax", condition: "Loading...", error: false },
+    sousse: { city: "Sousse", condition: "Loading...", error: false },
   });
   const [loading, setLoading] = useState(true);
 
@@ -30,10 +30,10 @@ export default function GermanyPage() {
   useEffect(() => {
     setLoading(true);
 
-    const cities = ["berlin", "munich", "hamburg"];
+    const cities = ["tunis", "sfax", "sousse"];
 
     const fetchPromises = cities.map((city) =>
-      fetch(`/api/germany?${city}=`)
+      fetch(`/api/open-meteo?${city}=`)
         .then((res) => {
           if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
           return res.json();
@@ -103,26 +103,26 @@ export default function GermanyPage() {
     <div className="container flex flex-col gap-10 justify-center items-center mx-auto relative z-10 m-20">
       <div
         className={`flex justify-center items-center bg-white/20 backdrop-blur-md border-2 border-white/40 rounded-lg h-70 w-180 gap-20 ${
-          data.berlin.error ? "opacity-50" : ""
+          data.tunis.error ? "opacity-50" : ""
         }`}
       >
         <div className="space-y-2 text-lg">
-          <h2 className="text-4xl font-semibold mb-4">{data.berlin.city}</h2>
+          <h2 className="text-4xl font-semibold mb-4">{data.tunis.city}</h2>
           <h3 className="font-extrabold">Temperature:</h3>
           <h4 className="font-sans ml-10">
-            {data.berlin.error
+            {data.tunis.error
               ? "N/A"
-              : `${data.berlin.temperature ?? "N/A"}°C`}
+              : `${data.tunis.temperature ?? "N/A"}°C`}
           </h4>
           <h3 className="font-extrabold">Conditions:</h3>
-          <h4 className="font-sans ml-1">{data.berlin.condition}</h4>
+          <h4 className="font-sans ml-1">{data.tunis.condition}</h4>
         </div>
         <div className="relative">
           <Image
-            src="/locations/berlin.png"
+            src="/locations/tunis.png"
             width={200}
             height={200}
-            alt="berlin"
+            alt="tunis"
             className="relative drop-shadow-2xl"
           />
         </div>
@@ -130,26 +130,26 @@ export default function GermanyPage() {
 
       <div
         className={`flex justify-center items-center bg-white/20 backdrop-blur-md border-2 border-white/40 rounded-lg h-70 w-180 gap-20 ${
-          data.munich.error ? "opacity-50" : ""
+          data.sfax.error ? "opacity-50" : ""
         }`}
       >
         <div className="space-y-2 text-lg">
-          <h2 className="text-4xl font-semibold mb-4">{data.munich.city}</h2>
+          <h2 className="text-4xl font-semibold mb-4">{data.sfax.city}</h2>
           <h3 className="font-extrabold">Temperature:</h3>
           <h4 className="font-sans ml-10">
-            {data.munich.error
+            {data.sfax.error
               ? "N/A"
-              : `${data.munich.temperature ?? "N/A"}°C`}
+              : `${data.sfax.temperature ?? "N/A"}°C`}
           </h4>
           <h3 className="font-extrabold">Conditions:</h3>
-          <h4 className="font-sans ml-1">{data.munich.condition}</h4>
+          <h4 className="font-sans ml-1">{data.sfax.condition}</h4>
         </div>
         <div className="relative">
           <Image
-            src="/locations/munich.png"
+            src="/locations/sfax.png"
             width={150}
             height={150}
-            alt="munich"
+            alt="sfax"
             className="relative drop-shadow-2xl m-10"
           />
         </div>
@@ -157,27 +157,27 @@ export default function GermanyPage() {
 
       <div
         className={`flex justify-center items-center bg-white/20 backdrop-blur-md border-2 border-white/40 rounded-lg h-70 w-180 gap-20 ${
-          data.hamburg.error ? "opacity-50" : ""
+          data.sousse.error ? "opacity-50" : ""
         }`}
       >
         <div className="space-y-2 text-lg">
-          <h2 className="text-4xl font-semibold mb-4">{data.hamburg.city}</h2>
+          <h2 className="text-4xl font-semibold mb-4">{data.sousse.city}</h2>
           <h3 className="font-extrabold">Temperature:</h3>
           <h4 className="font-sans ml-10">
-            {data.hamburg.error
+            {data.sousse.error
               ? "N/A"
-              : `${data.hamburg.temperature ?? "N/A"}°C`}
+              : `${data.sousse.temperature ?? "N/A"}°C`}
           </h4>
           <h3 className="font-extrabold">Conditions:</h3>
-          <h4 className="font-sans ml-1">{data.hamburg.condition}</h4>
+          <h4 className="font-sans ml-1">{data.sousse.condition}</h4>
         </div>
         <div className="relative">
           <Image
-            src="/locations/hamburg.png"
-            width={200}
-            height={200}
-            alt="hamburg"
-            className="relative drop-shadow-2xl"
+            src="/locations/sousse.svg"
+            width={150}
+            height={150}
+            alt="sousse"
+            className="relative drop-shadow-2xl ml-12"
           />
         </div>
       </div>

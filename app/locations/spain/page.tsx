@@ -1,5 +1,7 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 type WeatherData = {
@@ -22,6 +24,8 @@ export default function SpainPage() {
     barcelona: { city: "Barcelona", condition: "Loading...", error: false },
   });
   const [loading, setLoading] = useState(true);
+
+  const router = useRouter();
 
   useEffect(() => {
     setLoading(true);
@@ -84,10 +88,20 @@ export default function SpainPage() {
       </div>
     );
 
-{/* TODO: ADD BUTTON BACK */}
-
   return (
-    <div className="container flex flex-col gap-10 justify-center items-center mx-auto relative z-10 m-20">
+    <div className="container flex">
+    <Button
+          className="text-black rounded-full 
+        text-xl md:text-2xl mt-6 md:ml-10 py-8 px-10 
+        font-bold bg-white/20 backdrop-blur-md 
+        border-2 border-white/40 hover:bg-white/30 
+        hover:scale-105 transition-all duration-300 
+        shadow-2xl"
+          onClick={() => router.push("/locations")}
+        >
+          Go back
+        </Button>
+    <div className="container flex flex-col gap-10 justify-center items-center mx-auto relative z-10 m-20"> 
       <div className={`flex justify-center items-center bg-white/20 backdrop-blur-md border-2 border-white/40 rounded-lg h-70 w-180 gap-20 ${data.valencia.error ? 'opacity-50' : ''}`}>
         <div className="space-y-2 text-lg">
           <h2 className="text-4xl font-semibold mb-4">{data.valencia.city}</h2>
@@ -132,6 +146,7 @@ export default function SpainPage() {
           <Image src="/locations/bcn.png" width={200} height={200} alt="barcelona" className="relative drop-shadow-2xl"/>
         </div>
       </div>
+    </div>
     </div>
   );
 }
