@@ -41,7 +41,7 @@ const getCondition = (icon: number): string => {
     1: "Sunny",
     2: "Partly Cloudy",
     3: "Cloudy",
-    4: "Overcast",
+    4: "Overcast Clouds",
     5: "Foggy",
     6: "Cloudy with rain",
     7: "Light rain",
