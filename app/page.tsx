@@ -114,9 +114,11 @@ export default function Page() {
                 Real-time forecasts at your fingertips
               </p>
               <Link href="/maps">
-                <Button className="text-black rounded-full text-xl md:text-2xl mt-6 md:ml-2 py-7 px-10 
+                <Button
+                  className="text-black rounded-full text-xl md:text-2xl mt-6 md:ml-2 py-7 px-10 
                 font-bold bg-white/20 backdrop-blur-md border-2
-                 border-white/40 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl">
+                 border-white/40 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl"
+                >
                   Find out more →
                 </Button>
               </Link>
@@ -211,7 +213,9 @@ export default function Page() {
           <div className="container py-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-black mb-2">Stay connected</h2>
+                <h2 className="text-3xl font-bold text-black mb-2">
+                  Stay connected
+                </h2>
                 <p className="text-gray-600 text-lg">
                   Subscribe to our newsletter for the latest updates, <br />
                   resources, and exclusive offers.
@@ -226,13 +230,133 @@ export default function Page() {
                   focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent 
                   placeholder:text-gray-400"
                 />
-                <Button className="h-12 px-8 text-black font-bold rounded-full 
+                <Button
+                  className="h-12 px-8 text-black font-bold rounded-full 
                 text-xl md:text-2xl bg-white/20 backdrop-blur-md border-2
-                 border-white/40 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl">
+                 border-white/40 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl"
+                >
                   Subscribe
                 </Button>
               </div>
             </div>
+          </div>
+          <hr className="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-black/10" />
+
+          {/* Footer Section */}
+          <nav className="flex items-center flex-col">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-10 py-10 sm:grid-cols-4">
+              <div>
+                <h2>Features</h2>
+                <p>Locations</p>
+                <p>Maps</p>
+                <p>Warnings</p>
+              </div>
+              <div>
+                <h2>About Us</h2>
+                <p>FAQ</p>
+                <p>Contact</p>
+              </div>
+              <div>
+                <h2>Service</h2>
+                <p>Terms of Service</p>
+                <p>Privacy Policy</p>
+              </div>
+            </div>
+          </nav>
+
+          <hr className="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-black/10" />
+          <p>© 2025 YoanaStamenova - YoanaStamenova.com</p>
+          <div>
+            <a href="https://facebook.com">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                className="lucide lucide-facebook transition-transform 
+            hover:scale-110"
+                aria-hidden="true"
+              >
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a
+              aria-label="Twitter"
+              href="https://twitter.com"
+              className="text-primary-foreground/70 hover:text-primary-foreground/100 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                className="lucide lucide-twitter transition-transform 
+            hover:scale-110"
+                aria-hidden="true"
+              >
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 
+            17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 
+            7-3.8 1.1 0 3-1.2 3-1.2z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              aria-label="LinkedIn"
+              href="https://linkedin.com"
+              className="text-primary-foreground/70 hover:text-primary-foreground/100 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                className="lucide lucide-linkedin transition-transform hover:scale-110"
+                aria-hidden="true"
+              >
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a
+              aria-label="Instagram"
+              href="https://instagram.com"
+              className="text-primary-foreground/70 hover:text-primary-foreground/100 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                className="lucide lucide-instagram transition-transform hover:scale-110"
+                aria-hidden="true"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
