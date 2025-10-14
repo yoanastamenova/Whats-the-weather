@@ -114,7 +114,9 @@ export default function Page() {
                 Real-time forecasts at your fingertips
               </p>
               <Link href="/maps">
-                <Button className="text-black rounded-full text-xl md:text-2xl mt-6 md:ml-2 py-7 px-10 font-bold bg-white/20 backdrop-blur-md border-2 border-white/40 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl">
+                <Button className="text-black rounded-full text-xl md:text-2xl mt-6 md:ml-2 py-7 px-10 
+                font-bold bg-white/20 backdrop-blur-md border-2
+                 border-white/40 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl">
                   Find out more →
                 </Button>
               </Link>
@@ -193,7 +195,7 @@ export default function Page() {
           >
             <div className="font-bold md:text-5xl text-black text-center">
               <h2 className="text-6xl">Start your free trial today.</h2>
-              <h2 className="text-6xl">You can predict the rain.</h2>
+              <h2 className="text-6xl">Predict the next rain.</h2>
             </div>
             <p className="mt-4 text-xl">
               Join milions of users who have their umbrelas prepared.
@@ -206,39 +208,30 @@ export default function Page() {
           </div>
 
           {/* Newsletter Subscribe Block */}
-          <div className="container relative flex flex-col md:flex-row items-center gap-8">
-            <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
-            <div>
-              <h2 className="text-2xl font-semibold">Stay connected</h2>
-              <p className="text-balance mt-2">
-                Subscribe to our newsletter for the latest updates, <br />
-                resources, and exclusive offers.
-              </p>
-            </div>
+          <div className="container py-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-black mb-2">Stay connected</h2>
+                <p className="text-gray-600 text-lg">
+                  Subscribe to our newsletter for the latest updates, <br />
+                  resources, and exclusive offers.
+                </p>
+              </div>
 
-            <div className="flex flex-col gap-3 sm:flex-row ml-60">
-              <input
-                type="email"
-                id="helper-text"
-                aria-describedby="helper-text-explanation"
-                className="text-foreground placeholder:text-muted-foreground 
-                selection:bg-primary selection:text-primary-foreground 
-                dark:bg-input/30 flex w-full min-w-0 rounded-md border px-3 
-                py-1 text-base shadow-xs transition-[color,box-shadow] 
-                outline-none file:inline-flex file:h-7 file:border-0 
-                file:bg-transparent file:text-sm file:font-medium 
-                disabled:pointer-events-none disabled:cursor-not-allowed 
-                disabled:opacity-50 md:text-sm focus-visible:border-ring 
-                focus-visible:ring-ring/50 focus-visible:ring-[3px] 
-                aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 
-                aria-invalid:border-destructive border-primary-foreground/20 
-                bg-primary-foreground/10 h-12 pl-10"
-                placeholder="name@email.com"/> 
-                <Button className="inline-flex items-center 
-                justify-center gap-2 whitespace-nowrap rounded-md 
-                text-sm font-medium transition-all disabled:pointer-events-none 
-                disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 py-2 has-[>svg]:px-3 h-12 px-6">Subscribe</Button>
-            </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  placeholder="name@email.com"
+                  className="flex-1 h-12 px-4 rounded-md border border-gray-300 bg-gray-200 
+                  focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent 
+                  placeholder:text-gray-400"
+                />
+                <Button className="h-12 px-8 text-black font-bold rounded-full 
+                text-xl md:text-2xl bg-white/20 backdrop-blur-md border-2
+                 border-white/40 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl">
+                  Subscribe
+                </Button>
+              </div>
             </div>
           </div>
         </div>
