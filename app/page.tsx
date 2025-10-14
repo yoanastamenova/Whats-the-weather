@@ -10,41 +10,89 @@ export default function Page() {
   const features = [
     {
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          className="w-8 h-8"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z"
+          />
         </svg>
       ),
       title: "Interactive Maps",
-      description: "Explore real-time weather conditions with our dynamic, user-friendly maps. Zoom, pan, and track storms as they happen."
+      description:
+        "Explore real-time weather conditions with our dynamic, user-friendly maps. Zoom, pan, and track storms as they happen.",
     },
     {
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          className="w-8 h-8"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+          />
         </svg>
       ),
       title: "RealFeel® Temperature",
-      description: "Know how the weather actually feels, not just the temperature. Our advanced algorithm factors in humidity, wind, and sun intensity."
+      description:
+        "Know how the weather actually feels, not just the temperature. Our advanced algorithm factors in humidity, wind, and sun intensity.",
     },
     {
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          className="w-8 h-8"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5"
+          />
         </svg>
       ),
       title: "Severe Weather Alerts",
-      description: "Stay safe with immediate notifications for severe weather, storms, and extreme conditions in your area."
+      description:
+        "Stay safe with immediate notifications for severe weather, storms, and extreme conditions in your area.",
     },
     {
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          className="w-8 h-8"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"
+          />
         </svg>
       ),
       title: "Hourly & Daily Forecasts",
-      description: "Plan ahead with precise hour-by-hour and 10-day forecasts. From your morning commute to weekend plans, we've got you covered."
-    }
-  ]
+      description:
+        "Plan ahead with precise hour-by-hour and 10-day forecasts. From your morning commute to weekend plans, we've got you covered.",
+    },
+  ];
   return (
     <section className="relative min-h-screen overflow-hidden">
       <div className="absolute inset-0 opacity-10">
@@ -116,7 +164,7 @@ export default function Page() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {features.map((feature, index) => {
                 return (
-                  <div 
+                  <div
                     key={index}
                     className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-xl 
                     border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105"
@@ -133,8 +181,64 @@ export default function Page() {
                       </p>
                     </div>
                   </div>
-                )
+                );
               })}
+            </div>
+          </div>
+
+          {/* Free Trial Block */}
+          <div
+            className="container flex flex-col items-center my-20 py-20 bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-xl 
+                    border border-white/20"
+          >
+            <div className="font-bold md:text-5xl text-black text-center">
+              <h2 className="text-6xl">Start your free trial today.</h2>
+              <h2 className="text-6xl">You can predict the rain.</h2>
+            </div>
+            <p className="mt-4 text-xl">
+              Join milions of users who have their umbrelas prepared.
+            </p>
+            <Button className="flex flex-col items-center w-58 mt-8 hover:bg-gray-500">
+              <p className="text-shadow-red-50">
+                Get started with 7 days free →{" "}
+              </p>
+            </Button>
+          </div>
+
+          {/* Newsletter Subscribe Block */}
+          <div className="container relative flex flex-col md:flex-row items-center gap-8">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
+            <div>
+              <h2 className="text-2xl font-semibold">Stay connected</h2>
+              <p className="text-balance mt-2">
+                Subscribe to our newsletter for the latest updates, <br />
+                resources, and exclusive offers.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row ml-60">
+              <input
+                type="email"
+                id="helper-text"
+                aria-describedby="helper-text-explanation"
+                className="text-foreground placeholder:text-muted-foreground 
+                selection:bg-primary selection:text-primary-foreground 
+                dark:bg-input/30 flex w-full min-w-0 rounded-md border px-3 
+                py-1 text-base shadow-xs transition-[color,box-shadow] 
+                outline-none file:inline-flex file:h-7 file:border-0 
+                file:bg-transparent file:text-sm file:font-medium 
+                disabled:pointer-events-none disabled:cursor-not-allowed 
+                disabled:opacity-50 md:text-sm focus-visible:border-ring 
+                focus-visible:ring-ring/50 focus-visible:ring-[3px] 
+                aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 
+                aria-invalid:border-destructive border-primary-foreground/20 
+                bg-primary-foreground/10 h-12 pl-10"
+                placeholder="name@email.com"/> 
+                <Button className="inline-flex items-center 
+                justify-center gap-2 whitespace-nowrap rounded-md 
+                text-sm font-medium transition-all disabled:pointer-events-none 
+                disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 py-2 has-[>svg]:px-3 h-12 px-6">Subscribe</Button>
+            </div>
             </div>
           </div>
         </div>
