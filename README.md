@@ -145,19 +145,27 @@ AEMET_API_KEY=your_api_key_here
 
 ### AEMET API (Spain)
 
-The application integrates with AEMET (Agencia Estatal de Meteorología) to provide real-time weather data for Spanish locations:
+The AEMET API (Agencia Estatal de Meteorología) to provide real-time weather data for Spanish locations:
 
-- **Station**: Valencia Viveros (IDEMA: 8416Y)
+- **Station**: Valencia, Madrid and Barcelona
 - **Data Points**: Temperature, humidity, pressure, wind speed, precipitation, sunshine duration
 - **Conditions**: Dynamic weather conditions based on multiple factors (rain, sunshine, humidity)
 
 ### DWD API (Germany)
 
-The application also integrates with DWD (Deutscher Wetterdienst) to provide weather data for German locations:
+The Open-Meteo Free API is imported to provide weather data for German locations:
 
-- **Locations**: Munich (München)
+- **Locations**: Munich, Berlin and Hamburg
 - **Data Points**: Temperature, humidity, pressure, wind speed, precipitation, weather conditions
 - **Features**: Open data API with no authentication required
+
+### Open-Meteo API (Tunis)
+
+The DWD (Deutscher Wetterdienst) is imported to provide weather data for German locations:
+
+- **Locations**: Tunis, Sfax, Sousse
+- **Data Points**: Temperature, precipitation, weather conditions
+- **Features**: Open data API with no authentication required and no key
 
 ## 🎨 Design Features
 
