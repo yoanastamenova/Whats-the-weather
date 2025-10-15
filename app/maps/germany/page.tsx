@@ -138,8 +138,8 @@ function GermanyWeatherMapComponent() {
       markersRef.current.forEach(marker => {
         try {
           marker.remove();
-        } catch (e) {
-          // Ignore
+        } catch (error) {
+          console.log(error);
         }
       });
       markersRef.current = [];
@@ -147,13 +147,13 @@ function GermanyWeatherMapComponent() {
       if (mapInstanceRef.current) {
         try {
           mapInstanceRef.current.remove();
-        } catch (e) {
-          // Ignore
+        }  catch (error) {
+          console.log(error);
         }
         mapInstanceRef.current = null;
       }
     };
-  }, [isClient]);
+  }, );
 
   if (!isClient) {
     return (

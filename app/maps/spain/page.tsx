@@ -144,8 +144,8 @@ function SpainWeatherMapComponent() {
       markersRef.current.forEach((marker) => {
         try {
           marker.remove();
-        } catch (e) {
-          // Ignore
+        } catch (error) {
+          console.log(error);
         }
       });
       markersRef.current = [];
@@ -155,7 +155,7 @@ function SpainWeatherMapComponent() {
         mapInstanceRef.current = null;
       }
     };
-  }, [isClient]);
+  }, );
 
   if (!isClient) {
     return (
