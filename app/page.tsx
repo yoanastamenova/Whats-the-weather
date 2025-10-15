@@ -240,33 +240,58 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <hr className="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-black/10" />
+          <hr className="my-8 h-0.5 border-t-0 bg-neutral-100 dark:bg-black/10" />
 
           {/* Footer Section */}
-          <nav className="flex items-center flex-col">
-            <div className="grid grid-cols-2 gap-x-4 gap-y-10 py-10 sm:grid-cols-4">
+          <nav className="flex justify-between flex-col sm:grid-cols-4">
+            <div className="grid grid-cols-2 py-10 sm:grid-cols-4 ">
               <div>
-                <h2>Features</h2>
-                <p>Locations</p>
-                <p>Maps</p>
-                <p>Warnings</p>
+                <h3 className="text-xl font-semibold">Features</h3>
+                <ul className="space-y-4">
+                <li className="mt-4">
+                  <a href="/locations" 
+                  className="text-primary-foreground/80 
+                  hover:text-primary-foreground inline-block 
+                  transition-colors duration-200">
+                  Locations
+                  </a>
+                </li>
+                <li className="mt-2">
+                  <a href="/maps"
+                  className="text-primary-foreground/80 
+                  hover:text-primary-foreground inline-block 
+                  transition-colors duration-200">
+                  Maps
+                  </a>
+                </li>
+                <li className="mt-2">
+                  <a href="/warnings"
+                  className="text-primary-foreground/80 
+                  hover:text-primary-foreground inline-block 
+                  transition-colors duration-200">
+                  Warnings
+                  </a>
+                </li>
+                </ul>
               </div>
               <div>
-                <h2>About Us</h2>
-                <p>FAQ</p>
-                <p>Contact</p>
+                <h3 className="text-xl font-semibold">About Us</h3>
+                <p className="mt-2">FAQ</p>
+                <p className="mt-2">Contact</p>
               </div>
               <div>
-                <h2>Service</h2>
-                <p>Terms of Service</p>
-                <p>Privacy Policy</p>
+                <h3 className="text-xl font-semibold">Service</h3>
+                <p className="mt-2">Terms of Service</p>
+                <p className="mt-2">Privacy Policy</p>
               </div>
             </div>
           </nav>
 
-          <hr className="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-black/10" />
-          <p>© 2025 YoanaStamenova - YoanaStamenova.com</p>
-          <div>
+          {/* Copyright and Socials Section */}
+          <hr className="my-8 h-0.5 border-t-0 bg-neutral-100 dark:bg-black/10" />
+          <div className="mx-auto mt-4 flex flex-col items-center justify-between gap-6 sm:flex-row">
+            <p className="font-medium">© 2025 YoanaStamenova - YoanaStamenova.com</p>
+          <div className="flex items-center gap-6">
             <a href="https://facebook.com">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -297,7 +322,7 @@ export default function Page() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
+                strokeWidth="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 className="lucide lucide-twitter transition-transform 
@@ -323,7 +348,7 @@ export default function Page() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
+                strokeWidth="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 className="lucide lucide-linkedin transition-transform hover:scale-110"
@@ -346,7 +371,7 @@ export default function Page() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
+                strokeWidth="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 className="lucide lucide-instagram transition-transform hover:scale-110"
@@ -357,6 +382,7 @@ export default function Page() {
                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
               </svg>
             </a>
+          </div>
           </div>
         </div>
       </div>
