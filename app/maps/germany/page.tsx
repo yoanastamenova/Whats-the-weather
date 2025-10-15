@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import dynamic from "next/dynamic";
+import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
 
 interface City {
   name: string;
@@ -20,7 +20,7 @@ interface WeatherResponse {
   };
 }
 
-function SpainWeatherMapComponent() {
+function GermanyWeatherMapComponent() {
   const mapRef = useRef<HTMLDivElement | null>(null);
   const mapInstanceRef = useRef<any>(null);
   const markersRef = useRef<any[]>([]);
@@ -28,13 +28,13 @@ function SpainWeatherMapComponent() {
   const [isClient, setIsClient] = useState(false);
 
   const cities: City[] = [
-    { name: "Madrid", lat: 40.4168, lon: -3.7038 },
-    { name: "Barcelona", lat: 41.3851, lon: 2.1734 },
-    { name: "Valencia", lat: 39.4699, lon: -0.3763 },
-    { name: "Sevilla", lat: 37.3891, lon: -5.9845 },
-    { name: "Bilbao", lat: 43.263, lon: -2.935 },
-    { name: "Málaga", lat: 36.7213, lon: -4.4214 },
-    { name: "Zaragoza", lat: 41.6488, lon: -0.8891 },
+    { name: 'Berlin', lat: 52.5200, lon: 13.4050 },
+    { name: 'Munich', lat: 48.1351, lon: 11.5820 },
+    { name: 'Hamburg', lat: 53.5511, lon: 9.9937 },
+    { name: 'Frankfurt', lat: 50.1109, lon: 8.6821 },
+    { name: 'Cologne', lat: 50.9375, lon: 6.9603 },
+    { name: 'Stuttgart', lat: 48.7758, lon: 9.1829 },
+    { name: 'Düsseldorf', lat: 51.2277, lon: 6.7735 }
   ];
 
   useEffect(() => {
@@ -44,38 +44,41 @@ function SpainWeatherMapComponent() {
   useEffect(() => {
     if (!isClient || !mapRef.current) return;
 
+    // Dynamic import of Leaflet
     const initMap = async () => {
-      const L = (await import("leaflet")).default;
-      await import("leaflet/dist/leaflet.css");
+      const L = (await import('leaflet')).default;
+      await import('leaflet/dist/leaflet.css');
 
+      // Prevent re-initialization
       if (mapInstanceRef.current) return;
 
-      const map = L.map(mapRef.current!).setView([40.4168, -3.7038], 6);
+      // Initialize map centered on Germany
+      const map = L.map(mapRef.current!).setView([51.1657, 10.4515], 6);
       mapInstanceRef.current = map;
 
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: "© OpenStreetMap contributors",
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
       }).addTo(map);
 
       const getWeatherEmoji = (code: number): string => {
-        if (code === 0) return "☀️";
-        if (code <= 3) return "⛅";
-        if (code <= 67) return "🌧️";
-        if (code <= 77) return "🌨️";
-        if (code <= 99) return "⛈️";
-        return "🌡️";
+        if (code === 0) return '☀️';
+        if (code <= 3) return '⛅';
+        if (code <= 67) return '🌧️';
+        if (code <= 77) return '🌨️';
+        if (code <= 99) return '⛈️';
+        return '🌡️';
       };
 
       const fetchWeatherData = async (): Promise<void> => {
         for (const city of cities) {
           try {
             const response = await fetch(
-              `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Europe/Madrid`
+              `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Europe/Berlin`
             );
             const data: WeatherResponse = await response.json();
 
             const icon = L.divIcon({
-              className: "custom-weather-marker",
+              className: 'custom-weather-marker',
               html: `
                 <div style="
                   background: linear-gradient(135deg, #5329ae 0%, #ee5a6f 100%);
@@ -97,21 +100,19 @@ function SpainWeatherMapComponent() {
                     ${Math.round(data.current.temperature_2m)}°C
                   </div>
                   <div style="font-size: 11px; opacity: 0.9; margin-top: 4px;">
-                    💧 ${data.current.relative_humidity_2m}% | 💨 ${Math.round(
-                data.current.wind_speed_10m
-              )} km/h
+                    💧 ${data.current.relative_humidity_2m}% | 💨 ${Math.round(data.current.wind_speed_10m)} km/h
                   </div>
                 </div>
               `,
               iconSize: [160, 120],
-              iconAnchor: [80, 120],
+              iconAnchor: [80, 120]
             });
 
             if (!mapInstanceRef.current) return;
 
-            const marker = L.marker([city.lat, city.lon], { icon }).addTo(
-              mapInstanceRef.current
-            ).bindPopup(`
+            const marker = L.marker([city.lat, city.lon], { icon })
+              .addTo(mapInstanceRef.current)
+              .bindPopup(`
                 <strong>${city.name}</strong><br/>
                 Temperature: ${data.current.temperature_2m}°C<br/>
                 Humidity: ${data.current.relative_humidity_2m}%<br/>
@@ -131,7 +132,7 @@ function SpainWeatherMapComponent() {
     initMap();
 
     return () => {
-      markersRef.current.forEach((marker) => {
+      markersRef.current.forEach(marker => {
         try {
           marker.remove();
         } catch (e) {
@@ -139,9 +140,13 @@ function SpainWeatherMapComponent() {
         }
       });
       markersRef.current = [];
-
+      
       if (mapInstanceRef.current) {
+        try {
           mapInstanceRef.current.remove();
+        } catch (e) {
+          // Ignore
+        }
         mapInstanceRef.current = null;
       }
     };
@@ -170,8 +175,8 @@ function SpainWeatherMapComponent() {
       >
         ← Go back
       </Button>
-
-      <h2 className="text-2xl font-bold mb-4 text-center">Spain Weather Map</h2>
+      
+      <h2 className="text-2xl font-bold mb-4 text-center">Germany Weather Map</h2>
       <div ref={mapRef} className="w-full h-[600px] rounded-lg shadow-lg" />
       <p className="text-sm text-gray-600 mt-2 text-center">
         Weather data from Open-Meteo API | Map from OpenStreetMap
@@ -180,7 +185,8 @@ function SpainWeatherMapComponent() {
   );
 }
 
-export default dynamic(() => Promise.resolve(SpainWeatherMapComponent), {
+// Export with SSR disabled
+export default dynamic(() => Promise.resolve(GermanyWeatherMapComponent), {
   ssr: false,
   loading: () => (
     <div className="w-full px-30">
@@ -188,5 +194,5 @@ export default dynamic(() => Promise.resolve(SpainWeatherMapComponent), {
         <p className="text-gray-500">Loading map...</p>
       </div>
     </div>
-  ),
+  )
 });
