@@ -276,13 +276,39 @@ export default function Page() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold">About Us</h3>
-                <p className="mt-2">FAQ</p>
-                <p className="mt-2">Contact</p>
+                <ul className="space-y-2">
+                  <li className="mt-2">
+                    <a href="/faq"
+                    className="text-primary-foreground/80 
+                  hover:text-primary-foreground inline-block 
+                  transition-colors duration-200">
+                      FAQ
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/contact">
+                    Contact
+                    </a>
+                  </li>
+                </ul>
               </div>
               <div>
                 <h3 className="text-xl font-semibold">Service</h3>
-                <p className="mt-2">Terms of Service</p>
-                <p className="mt-2">Privacy Policy</p>
+                <ul className="space-y-2">
+                  <li className="mt-2">
+                    <a href="/terms">Terms of Service</a>
+                  </li>
+                  <li className="mt-2">
+                    <a href="/policy">Privacy Policy</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <Image src="/logo.png" 
+                alt="logo footer"
+                width={150}
+                height={150}
+                />
               </div>
             </div>
           </nav>
@@ -300,9 +326,9 @@ export default function Page() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-facebook transition-transform 
             hover:scale-110"
                 aria-hidden="true"
@@ -323,8 +349,8 @@ export default function Page() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-twitter transition-transform 
             hover:scale-110"
                 aria-hidden="true"
@@ -349,8 +375,8 @@ export default function Page() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-linkedin transition-transform hover:scale-110"
                 aria-hidden="true"
               >
@@ -372,8 +398,8 @@ export default function Page() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-instagram transition-transform hover:scale-110"
                 aria-hidden="true"
               >
