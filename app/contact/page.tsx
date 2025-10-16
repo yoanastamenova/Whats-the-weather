@@ -70,14 +70,16 @@ export default function ContactPage() {
                 </li>
                 <li>
                   <span className="font-bold">Email: </span>
-                  <a href="mailto:email@example.com" className="underline">
+                  <a href="mailto:email@example.com" className="!underline underline-offset-4">
                     email@example.com
                   </a>
                 </li>
                 <li>
                   <span className="font-bold">Address: </span>
-                  Whats the Weather SML Madison Av 5, Building 3, Floor 4 46012,
-                  Valencia, Spain
+                  <span className="underline underline-offset-4">
+                    Whats the Weather SML Madison Av 5, Building 3, Floor 4 46012,
+                    Valencia, Spain
+                  </span>
                 </li>
               </ul>
             </div>
@@ -88,9 +90,9 @@ export default function ContactPage() {
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-8 max-w-3xl mx-auto py-10"
-              >
-                <FormField
+                className="space-y-5 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <FormField
                   control={form.control}
                   name="name_9955127597"
                   render={({ field }) => (
@@ -123,6 +125,7 @@ export default function ContactPage() {
                     </FormItem>
                   )}
                 />
+                </div>
 
                 <FormField
                   control={form.control}
@@ -161,9 +164,10 @@ export default function ContactPage() {
                     <FormItem>
                       <FormLabel>Message</FormLabel>
                       <FormControl>
-                        <Input
+                        <textarea
                           placeholder="Type your message here."
-                          type="text"
+                          className="placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input min-h-[120px] w-full min-w-0 rounded-md border bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive resize-none"
+                          rows={6}
                           {...field}
                         />
                       </FormControl>
@@ -172,7 +176,7 @@ export default function ContactPage() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit">Submit</Button>
+                <Button type="submit" className="w-full">Send message</Button>
               </form>
             </Form>
           </div>
