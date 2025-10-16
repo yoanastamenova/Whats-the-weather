@@ -22,8 +22,8 @@ interface WeatherResponse {
 
 function SpainWeatherMapComponent() {
   const mapRef = useRef<HTMLDivElement | null>(null);
-  const mapInstanceRef = useRef<any>(null);
-  const markersRef = useRef<any[]>([]);
+  const mapInstanceRef = useRef<L.Map | null>(null);
+  const markersRef = useRef<L.Marker[]>([]);
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
 
@@ -44,17 +44,27 @@ function SpainWeatherMapComponent() {
   useEffect(() => {
     if (!isClient || !mapRef.current) return;
 
+    // Dynamic import of Leaflet
     const initMap = async () => {
-      const L = (await import("leaflet")).default;
-      await import("leaflet/dist/leaflet.css");
+      const L = (await import('leaflet')).default;
+      
+      // Import CSS via a style tag instead
+      if (typeof window !== 'undefined') {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        document.head.appendChild(link);
+      }
 
+      // Prevent re-initialization
       if (mapInstanceRef.current) return;
 
+      // Initialize map
       const map = L.map(mapRef.current!).setView([40.4168, -3.7038], 6);
       mapInstanceRef.current = map;
 
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: "© OpenStreetMap contributors",
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
       }).addTo(map);
 
       const getWeatherEmoji = (code: number): string => {
@@ -134,8 +144,8 @@ function SpainWeatherMapComponent() {
       markersRef.current.forEach((marker) => {
         try {
           marker.remove();
-        } catch (e) {
-          // Ignore
+        } catch (error) {
+          console.log(error);
         }
       });
       markersRef.current = [];
@@ -145,7 +155,7 @@ function SpainWeatherMapComponent() {
         mapInstanceRef.current = null;
       }
     };
-  }, [isClient]);
+  }, );
 
   if (!isClient) {
     return (

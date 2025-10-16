@@ -22,8 +22,8 @@ interface WeatherResponse {
 
 function GermanyWeatherMapComponent() {
   const mapRef = useRef<HTMLDivElement | null>(null);
-  const mapInstanceRef = useRef<any>(null);
-  const markersRef = useRef<any[]>([]);
+  const mapInstanceRef = useRef<L.Map | null>(null);
+  const markersRef = useRef<L.Marker[]>([]);
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
 
@@ -44,15 +44,18 @@ function GermanyWeatherMapComponent() {
   useEffect(() => {
     if (!isClient || !mapRef.current) return;
 
-    // Dynamic import of Leaflet
     const initMap = async () => {
       const L = (await import('leaflet')).default;
-      await import('leaflet/dist/leaflet.css');
+      
+      if (typeof window !== 'undefined') {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        document.head.appendChild(link);
+      }
 
-      // Prevent re-initialization
       if (mapInstanceRef.current) return;
 
-      // Initialize map centered on Germany
       const map = L.map(mapRef.current!).setView([51.1657, 10.4515], 6);
       mapInstanceRef.current = map;
 
@@ -135,8 +138,8 @@ function GermanyWeatherMapComponent() {
       markersRef.current.forEach(marker => {
         try {
           marker.remove();
-        } catch (e) {
-          // Ignore
+        } catch (error) {
+          console.log(error);
         }
       });
       markersRef.current = [];
@@ -144,13 +147,13 @@ function GermanyWeatherMapComponent() {
       if (mapInstanceRef.current) {
         try {
           mapInstanceRef.current.remove();
-        } catch (e) {
-          // Ignore
+        }  catch (error) {
+          console.log(error);
         }
         mapInstanceRef.current = null;
       }
     };
-  }, [isClient]);
+  }, );
 
   if (!isClient) {
     return (
@@ -185,7 +188,6 @@ function GermanyWeatherMapComponent() {
   );
 }
 
-// Export with SSR disabled
 export default dynamic(() => Promise.resolve(GermanyWeatherMapComponent), {
   ssr: false,
   loading: () => (
