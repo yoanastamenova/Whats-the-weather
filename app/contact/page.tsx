@@ -10,13 +10,12 @@ export default function ContactPage() {
         <div className="mx-auto flex max-w-sm flex-col justify-between gap-10">
           <div className="text-center lg:text-left">
           <h1 className="mb-2 text-5xl font-semibold lg:mb-1 lg:text-6xl">Contact Us</h1>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground mt-8">
             We are available for questions, feedback, or collaboration
             opportunities. Let us know how we can help!
           </p>
           </div>
-        </div>
-        <div className="mx-auto w-fit lg:mx-0">
+        <div className="mx-auto w-fit my-12 lg:mx-0">
           <h3 className="mb-6 text-center text-2xl font-semibold lg:text-left"> Contact Details</h3>
           <ul className="ml-4 list-disc">
             <li>
@@ -35,6 +34,7 @@ export default function ContactPage() {
               </li>
           </ul>
         </div>
+                </div>
 
             {/* Contact Form to Fill */}
             <div className="container mx-auto px-4 py-16 mt-12 relative z-10 p-6"></div>
