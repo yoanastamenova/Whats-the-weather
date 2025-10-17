@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Background from "@/components/background";
+import Footer from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} relative min-h-screen`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} relative min-h-screen flex flex-col`}>
         {/* Gradient background */}
         <Background />
 
@@ -34,7 +35,10 @@ export default function RootLayout({
         <Navbar />
 
         {/* Page content */}
-        <main className="relative z-10">{children}</main>
+        <main className="relative z-10 flex-grow">{children}</main>
+
+        {/* Footer */}
+        <Footer />
       </body>
     </html>
   );

@@ -21,7 +21,11 @@ A modern, full-featured weather application built with Next.js 15 that provides 
 - **Responsive Navigation** - Mobile-friendly navbar with hamburger menu for smaller screens
 - **Glassmorphism Design** - Modern UI with frosted glass effects, backdrop blur, and smooth animations
 - **Newsletter Subscription** - Stay connected with weather updates and exclusive offers
-- **Complete Footer** - Social media integration (Facebook, Twitter, LinkedIn, Instagram) and comprehensive site navigation
+- **Complete Footer** - Reusable footer component with:
+  - Social media integration (Facebook, Twitter, LinkedIn, Instagram)
+  - Navigation sections (Features, About Us, Service)
+  - Copyright information and logo
+  - Consistent width constraints across all pages
 
 ## 🛠️ Tech Stack
 
@@ -54,6 +58,7 @@ A modern, full-featured weather application built with Next.js 15 that provides 
 
 **Frontend:** Next.js 15, React 19, TypeScript, Tailwind CSS
 **UI Components:** shadcn/ui, Heroicons
+**Forms:** React Hook Form, Zod (validation), Sonner (toast notifications)
 **Maps:** Leaflet (OpenStreetMap integration)
 **APIs:** AEMET (Spain), Open-Meteo (Germany & Tunisia)
 
@@ -124,11 +129,12 @@ whats-the-weather/
 │   ├── warnings/           # Weather warnings/alerts page
 │   ├── contact/            # Contact page
 │   ├── globals.css         # Global styles with animations
-│   ├── layout.tsx          # Root layout with navbar
-│   └── page.tsx            # Homepage with hero, carousel, and footer
+│   ├── layout.tsx          # Root layout with navbar, footer, and flex layout
+│   └── page.tsx            # Homepage with hero, carousel, and newsletter
 ├── components/
-│   ├── ui/                 # shadcn/ui components (button, card)
+│   ├── ui/                 # shadcn/ui components (button, card, form, input, label)
 │   ├── navbar.tsx          # Responsive navigation with mobile menu
+│   ├── footer.tsx          # Reusable footer with navigation and social links
 │   ├── carousel.tsx        # Auto-rotating weather feature carousel
 │   └── background.tsx      # Animated background component
 ├── lib/
@@ -235,7 +241,12 @@ Open-Meteo provides free, open-source weather data with no authentication requir
 
 ### Other Pages
 - `/warnings` - Weather warnings and alerts (placeholder)
-- `/contact` - Contact page (placeholder)
+- `/contact` - Full-featured contact page with form validation:
+  - React Hook Form integration with Zod schema validation
+  - Fields: First Name, Last Name, Email, Subject, Message
+  - Toast notifications on form submission
+  - Contact details display (phone, email, address)
+  - Responsive layout with side-by-side desktop view
 
 ## 🎨 Design Features
 
