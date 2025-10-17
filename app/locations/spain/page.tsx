@@ -99,7 +99,7 @@ export default function SpainPage() {
         shadow-2xl"
           onClick={() => router.push("/locations")}
         >
-          Go back
+          ← Go back
         </Button>
     <div className="container flex flex-col gap-10 justify-center items-center mx-auto relative z-10 m-20"> 
       <div className={`flex justify-center items-center bg-white/20 backdrop-blur-md border-2 border-white/40 rounded-lg h-70 w-180 gap-20 ${data.valencia.error ? 'opacity-50' : ''}`}>
