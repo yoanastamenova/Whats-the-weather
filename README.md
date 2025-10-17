@@ -2,26 +2,6 @@
 
 A modern, full-featured weather application built with Next.js 15 that provides real-time weather forecasts and conditions across Spain, Germany, and Tunisia. Features a stunning glassmorphism UI, interactive Leaflet maps with real-time weather markers, auto-rotating carousel, responsive navigation, and integration with multiple weather APIs including AEMET and Open-Meteo.
 
-## ✨ Features
-
-### Core Weather Features
-- **Interactive Weather Maps** - Dynamic Leaflet-based maps with real-time weather markers showing temperature, humidity, and wind speed for major cities
-- **Multi-Country Coverage** - Comprehensive weather data for Spain, Germany, and Tunisia
-- **Location-Specific Forecasts** - Detailed weather conditions for 9 cities across 3 countries:
-  - **Spain**: Valencia, Madrid, Barcelona
-  - **Germany**: Munich, Berlin, Hamburg
-  - **Tunisia**: Tunis, Sfax, Sousse
-- **RealFeel® Technology** - Advanced algorithm that factors in humidity, wind, and sun intensity to show how the weather actually feels
-- **Severe Weather Alerts** - Stay safe with immediate notifications for storms and extreme conditions
-- **Hourly & Daily Forecasts** - Precise hour-by-hour and extended forecasts
-
-### User Interface
-- **Modern Homepage** - Comprehensive landing page with hero section, feature showcase, and call-to-action blocks
-- **Auto-Rotating Carousel** - Interactive feature carousel showcasing location forecasts, maps, warnings, and detailed forecasts
-- **Responsive Navigation** - Mobile-friendly navbar with hamburger menu for smaller screens
-- **Glassmorphism Design** - Modern UI with frosted glass effects, backdrop blur, and smooth animations
-- **Newsletter Subscription** - Stay connected with weather updates and exclusive offers
-- **Complete Footer** - Social media integration (Facebook, Twitter, LinkedIn, Instagram) and comprehensive site navigation
 
 ## 🛠️ Tech Stack
 
@@ -52,10 +32,43 @@ A modern, full-featured weather application built with Next.js 15 that provides 
   </a>
 </div>
 
+## ✨ Features
+
+### Core Weather Features
+- **Interactive Weather Maps** - Dynamic Leaflet-based maps with real-time weather markers showing temperature, humidity, and wind speed for major cities
+- **Multi-Country Coverage** - Comprehensive weather data for Spain, Germany, and Tunisia
+- **Location-Specific Forecasts** - Detailed weather conditions for 9 cities across 3 countries:
+  - **Spain**: Valencia, Madrid, Barcelona
+  - **Germany**: Munich, Berlin, Hamburg
+  - **Tunisia**: Tunis, Sfax, Sousse
+- **RealFeel® Technology** - Advanced algorithm that factors in humidity, wind, and sun intensity to show how the weather actually feels
+- **Severe Weather Alerts** - Stay safe with immediate notifications for storms and extreme conditions
+- **Hourly & Daily Forecasts** - Precise hour-by-hour and extended forecasts
+
+### User Interface
+- **Modern Homepage** - Comprehensive landing page with hero section, feature showcase, and call-to-action blocks
+- **Auto-Rotating Carousel** - Interactive feature carousel showcasing location forecasts, maps, warnings, and detailed forecasts
+- **Responsive Navigation** - Mobile-friendly navbar with hamburger menu for smaller screens
+- **Glassmorphism Design** - Modern UI with frosted glass effects, backdrop blur, and smooth animations
+- **Newsletter Subscription** - Stay connected with weather updates and exclusive offers
+- **Complete Footer** - Reusable footer component with:
+  - Social media integration (Facebook, Twitter, LinkedIn, Instagram)
+  - Navigation sections (Features, About Us, Service)
+  - Copyright information and logo
+  - Consistent width constraints across all pages
+
 **Frontend:** Next.js 15, React 19, TypeScript, Tailwind CSS
 **UI Components:** shadcn/ui, Heroicons
+**Forms:** React Hook Form, Zod (validation), Sonner (toast notifications)
 **Maps:** Leaflet (OpenStreetMap integration)
 **APIs:** AEMET (Spain), Open-Meteo (Germany & Tunisia)
+
+## ☁️ Views 
+
+<img src="./public/views/home.png" height={100} width={100}/>
+<img src="./public/views/feature.png" height={100} width={100}/>
+<img src="./public/views/location.png" height={100} width={100}/>
+<img src="./public/views/map.png" height={100} width={100}/>
 
 ## 🚀 Getting Started
 
@@ -124,11 +137,12 @@ whats-the-weather/
 │   ├── warnings/           # Weather warnings/alerts page
 │   ├── contact/            # Contact page
 │   ├── globals.css         # Global styles with animations
-│   ├── layout.tsx          # Root layout with navbar
-│   └── page.tsx            # Homepage with hero, carousel, and footer
+│   ├── layout.tsx          # Root layout with navbar, footer, and flex layout
+│   └── page.tsx            # Homepage with hero, carousel, and newsletter
 ├── components/
-│   ├── ui/                 # shadcn/ui components (button, card)
+│   ├── ui/                 # shadcn/ui components (button, card, form, input, label)
 │   ├── navbar.tsx          # Responsive navigation with mobile menu
+│   ├── footer.tsx          # Reusable footer with navigation and social links
 │   ├── carousel.tsx        # Auto-rotating weather feature carousel
 │   └── background.tsx      # Animated background component
 ├── lib/
@@ -235,7 +249,12 @@ Open-Meteo provides free, open-source weather data with no authentication requir
 
 ### Other Pages
 - `/warnings` - Weather warnings and alerts (placeholder)
-- `/contact` - Contact page (placeholder)
+- `/contact` - Full-featured contact page with form validation:
+  - React Hook Form integration with Zod schema validation
+  - Fields: First Name, Last Name, Email, Subject, Message
+  - Toast notifications on form submission
+  - Contact details display (phone, email, address)
+  - Responsive layout with side-by-side desktop view
 
 ## 🎨 Design Features
 

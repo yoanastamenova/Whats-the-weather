@@ -98,7 +98,7 @@ export default function GermanyPage() {
         shadow-2xl"
           onClick={() => router.push("/locations")}
         >
-          Go back
+        ← Go back
         </Button>
     <div className="container flex flex-col gap-10 justify-center items-center mx-auto relative z-10 m-20">
       <div
