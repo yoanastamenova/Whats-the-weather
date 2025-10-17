@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function MapsPage() {
   return (
-    <div className="container mx-auto px-4 py-16 mt-12 relative z-10 p-6">
+    <div className="container mx-auto px-4 py-16 mt-12 relative z-10 min-h-[60vh]">
       <h2 className="text-4xl md:text-5xl font-semibold text-black text-center mb-8 drop-shadow-lg">
         Choose a country
       </h2>
