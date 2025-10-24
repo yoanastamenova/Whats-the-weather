@@ -15,7 +15,7 @@ export default function TermsPage() {
             <section>
               <h2 className="mb-4 text-3xl font-semibold">1. Agreement to Terms</h2>
               <p className="text-muted-foreground leading-relaxed">
-                By accessing or using What's the Weather, you agree to be bound by these Terms of Service and all applicable
+                By accessing or using What&apos;s the Weather, you agree to be bound by these Terms of Service and all applicable
                 laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing
                 this site.
               </p>
@@ -24,7 +24,7 @@ export default function TermsPage() {
             <section>
               <h2 className="mb-4 text-3xl font-semibold">2. Use License</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Permission is granted to temporarily access the materials (information or software) on What's the Weather's
+                Permission is granted to temporarily access the materials (information or software) on What&apos;s the Weather&apos;s
                 website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer
                 of title, and under this license you may not:
               </p>
@@ -33,7 +33,7 @@ export default function TermsPage() {
                 <li>Use the materials for any commercial purpose or for any public display</li>
                 <li>Attempt to reverse engineer any software contained on the website</li>
                 <li>Remove any copyright or other proprietary notations from the materials</li>
-                <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
+                <li>Transfer the materials to another person or &quot;mirror&quot; the materials on any other server</li>
               </ul>
             </section>
 
@@ -70,7 +70,7 @@ export default function TermsPage() {
                 <li>To transmit, or procure the sending of, any advertising or promotional material without our prior written consent</li>
                 <li>To impersonate or attempt to impersonate the Company, a Company employee, another user, or any other person or entity</li>
                 <li>In any way that infringes upon the rights of others, or in any way is illegal, threatening, fraudulent, or harmful</li>
-                <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the service</li>
+                <li>To engage in any other conduct that restricts or inhibits anyone&apos;s use or enjoyment of the service</li>
               </ul>
             </section>
 
@@ -78,16 +78,16 @@ export default function TermsPage() {
               <h2 className="mb-4 text-3xl font-semibold">6. Intellectual Property</h2>
               <p className="text-muted-foreground leading-relaxed">
                 The service and its original content, features, and functionality are and will remain the exclusive property
-                of What's the Weather and its licensors. The service is protected by copyright, trademark, and other laws of
+                of What&apos;s the Weather and its licensors. The service is protected by copyright, trademark, and other laws of
                 both the country and foreign countries. Our trademarks and trade dress may not be used in connection with any
-                product or service without the prior written consent of What's the Weather.
+                product or service without the prior written consent of What&apos;s the Weather.
               </p>
             </section>
 
             <section>
               <h2 className="mb-4 text-3xl font-semibold">7. Links to Other Websites</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Our service may contain links to third-party websites or services that are not owned or controlled by What's
+                Our service may contain links to third-party websites or services that are not owned or controlled by What&apos;s
                 the Weather. We have no control over, and assume no responsibility for, the content, privacy policies, or
                 practices of any third-party websites or services. You further acknowledge and agree that we shall not be
                 responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or
@@ -98,7 +98,7 @@ export default function TermsPage() {
             <section>
               <h2 className="mb-4 text-3xl font-semibold">8. Limitation of Liability</h2>
               <p className="text-muted-foreground leading-relaxed">
-                In no event shall What's the Weather, nor its directors, employees, partners, agents, suppliers, or affiliates,
+                In no event shall What&apos;s the Weather, nor its directors, employees, partners, agents, suppliers, or affiliates,
                 be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation,
                 loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or
                 inability to access or use the service.
@@ -108,7 +108,7 @@ export default function TermsPage() {
             <section>
               <h2 className="mb-4 text-3xl font-semibold">9. Disclaimer</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Your use of the service is at your sole risk. The service is provided on an "AS IS" and "AS AVAILABLE" basis.
+                Your use of the service is at your sole risk. The service is provided on an &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; basis.
                 The service is provided without warranties of any kind, whether express or implied, including, but not limited
                 to, implied warranties of merchantability, fitness for a particular purpose, non-infringement, or course of
                 performance.
@@ -138,7 +138,7 @@ export default function TermsPage() {
               <h2 className="mb-4 text-3xl font-semibold">12. Changes to Terms</h2>
               <p className="text-muted-foreground leading-relaxed">
                 We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is
-                material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a
+                material, we will provide at least 30 days&apos; notice prior to any new terms taking effect. What constitutes a
                 material change will be determined at our sole discretion. By continuing to access or use our service after
                 any revisions become effective, you agree to be bound by the revised terms.
               </p>

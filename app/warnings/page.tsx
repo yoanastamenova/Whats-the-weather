@@ -39,7 +39,7 @@ export default function WarningsPage() {
             const response = await fetch(`/api/aemet?${city}`)
             if (response.ok) {
               const data: WeatherData = await response.json()
-              const cityWarnings = analyzeWeatherData(data, 'Spain')
+              const cityWarnings = analyzeWeatherData(data)
               allWarnings.push(...cityWarnings)
             }
           } catch (err) {
@@ -54,7 +54,7 @@ export default function WarningsPage() {
             const response = await fetch(`/api/germany?${city}`)
             if (response.ok) {
               const data: WeatherData = await response.json()
-              const cityWarnings = analyzeWeatherData(data, 'Germany')
+              const cityWarnings = analyzeWeatherData(data)
               allWarnings.push(...cityWarnings)
             }
           } catch (err) {
@@ -78,7 +78,7 @@ export default function WarningsPage() {
     return () => clearInterval(interval)
   }, [])
 
-  function analyzeWeatherData(data: WeatherData, country: string): Warning[] {
+  function analyzeWeatherData(data: WeatherData): Warning[] {
     const warnings: Warning[] = []
 
     // Temperature warnings
