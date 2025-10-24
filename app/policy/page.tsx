@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="mb-4 text-3xl font-semibold">1. Introduction</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Welcome to What's the Weather. We respect your privacy and are committed to protecting your personal data.
+                Welcome to What&apos;s the Weather. We respect your privacy and are committed to protecting your personal data.
                 This privacy policy will inform you about how we look after your personal data when you visit our website
                 and tell you about your privacy rights and how the law protects you.
               </p>
@@ -102,7 +102,7 @@ export default function PrivacyPolicy() {
               <h2 className="mb-4 text-3xl font-semibold">9. Changes to This Privacy Policy</h2>
               <p className="text-muted-foreground leading-relaxed">
                 We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new
-                Privacy Policy on this page and updating the "Last updated" date at the top of this Privacy Policy.
+                Privacy Policy on this page and updating the &quot;Last updated&quot; date at the top of this Privacy Policy.
               </p>
             </section>
 

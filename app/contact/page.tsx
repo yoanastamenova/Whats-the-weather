@@ -66,7 +66,7 @@ export default function ContactPage() {
               <ul className="ml-4 list-disc">
                 <li>
                   <span className="font-bold">Phone: </span>
-                  "(123) 34567890"
+                  &quot;(123) 34567890&quot;
                 </li>
                 <li>
                   <span className="font-bold">Email: </span>
