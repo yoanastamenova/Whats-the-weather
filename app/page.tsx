@@ -116,7 +116,7 @@ export default function Page() {
                 <Button
                   className="text-black rounded-full text-xl md:text-2xl mt-6 md:ml-2 py-7 px-10 
                 font-bold bg-white/20 backdrop-blur-md border-2
-                 border-white/40 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl"
+                 border-white/40 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl cursor-pointer"
                 >
                   Find out more →
                 </Button>
@@ -124,7 +124,6 @@ export default function Page() {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-2xl"></div>
               <Image
                 src="/Hero.svg"
                 width={500}
@@ -201,7 +200,7 @@ export default function Page() {
             <p className="mt-4 text-xl">
               Join milions of users who have their umbrelas prepared.
             </p>
-            <Button className="flex flex-col items-center w-58 mt-8 hover:bg-gray-500">
+            <Button className="flex flex-col items-center w-58 mt-8 hover:bg-gray-500 cursor-pointer">
               <p className="text-shadow-red-50">
                 Get started with 7 days free →{" "}
               </p>
@@ -232,7 +231,7 @@ export default function Page() {
                 <Button
                   className="h-12 px-8 text-black font-bold rounded-full 
                 text-xl md:text-2xl bg-white/20 backdrop-blur-md border-2
-                 border-white/40 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl"
+                 border-white/40 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl cursor-pointer"
                 >
                   Subscribe
                 </Button>

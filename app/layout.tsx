@@ -35,7 +35,7 @@ export default function RootLayout({
         <Navbar />
 
         {/* Page content */}
-        <main className="relative z-10 flex-grow">{children}</main>
+        <main className="relative z-10 grow">{children}</main>
 
         {/* Footer */}
         <Footer />
