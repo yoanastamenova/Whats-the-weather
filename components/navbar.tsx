@@ -33,18 +33,9 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <button 
           className="md:hidden"
+          aria-label="Toggle menu"
           onClick={() => setIsOpen(!isOpen)}
         >
-        {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-blue-400 py-4 text-black">
-          <div className="flex flex-col items-center gap-2 font-semibold">
-            <Link href="/locations" className="hover:text-blue-600 px-6 py-3"> LOCATIONS </Link>
-            <Link href="/maps" className="hover:text-blue-600 px-6 py-3"> MAPS </Link>
-            <Link href="/warnings" className="hover:text-blue-600 px-6 py-3"> WARNINGS </Link>
-            <Link href="/contact" className="hover:text-blue-600 px-6 py-3"> CONTACT </Link>
-          </div>
-        </div>
-      )}
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             fill="none" 
@@ -56,6 +47,16 @@ export default function Navbar() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
         </button>
+         {isOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-blue-400 py-4 text-black">
+          <div className="flex flex-col items-center gap-2 font-semibold">
+            <Link href="/locations" className="hover:text-blue-600 px-6 py-3"> LOCATIONS </Link>
+            <Link href="/maps" className="hover:text-blue-600 px-6 py-3"> MAPS </Link>
+            <Link href="/warnings" className="hover:text-blue-600 px-6 py-3"> WARNINGS </Link>
+            <Link href="/contact" className="hover:text-blue-600 px-6 py-3"> CONTACT </Link>
+          </div>
+        </div>
+      )}
       </div>
     </nav>
   )
