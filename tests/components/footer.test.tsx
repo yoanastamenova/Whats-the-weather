@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import Footer from '../components/footer'
+import Footer from '@/components/footer'
 
 test('renders the section headings', () => {
   render(<Footer />)
