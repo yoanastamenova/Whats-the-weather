@@ -18,4 +18,4 @@ test('expect links to be shown', () => {
 
     expect(screen.getByRole('link', { name: 'LOCATIONS'})).toHaveAttribute('href', '/locations')
     expect(screen.getByText('© 2025 YoanaStamenova - YoanaStamenova.com')).toBeDefined()
-})
+}) 
