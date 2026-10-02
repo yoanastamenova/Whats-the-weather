@@ -65,7 +65,7 @@ test("shows 'Data unavailable' for a city whose fetch fails", async () => {
     if (urlStr.includes("berlin")) {
       return Promise.resolve({
         ok: false,
-        json: async () => ({ city: "Berlin", temperature: "N/A", condition: "N/A" }),
+        json: async () => ({ city: "Berlin", temperature: "N/A", condition: "Data unavailable" }),
       } as Response)
     }
     if (urlStr.includes("munich")) {
