@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const DWD_BASE_URL = "https://dwd.api.proxy.bund.dev/v30";
+const DWD_BASE_URL = "https://app-prod-ws.warnwetter.de/v30";
 
 interface DWDStationData {
   forecast1: {
