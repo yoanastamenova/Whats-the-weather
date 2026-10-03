@@ -178,6 +178,46 @@ AEMET_API_KEY=your_api_key_here
 - `npm start` - Start production server
 - `npm run lint` - Run ESLint
 
+## 🧪 Testing
+
+Tests use [Vitest](https://vitest.dev/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) with a `jsdom` environment (`vitest.config.js`, `vitest.setup.ts`). Run them with:
+
+```bash
+npx vitest run
+```
+
+or `npx vitest run <path>` to run a single file.
+
+### Pages (`tests/app/`)
+
+- **`page.test.tsx`** (homepage) — hero heading, "Find out more" link to `/maps`, hero image alt text, feature cards, free trial button, and the newsletter subscribe form.
+- **`layout.test.tsx`** — root layout renders the nav link to `/locations` and the footer's copyright line; mocks `next/font/google` since font loaders don't work under `jsdom`.
+- **`policy/page.test.tsx`** / **`terms/page.test.tsx`** — heading plus every numbered section title renders; terms page also checks the contact `mailto:` link.
+- **`locations/page.test.tsx`** / **`maps/page.test.tsx`** — overview pages: heading plus the country links point at the right routes (`/locations/spain`, `/maps/germany`, etc).
+
+### Locations subpages (`tests/app/locations/{germany,spain,tunis}/page.test.tsx`)
+
+Each of these pages fetches live weather data per city in a `useEffect` and navigates back via `useRouter`, so each test file follows the same four-case shape:
+
+1. **Loading state** — `fetch` is mocked to return a promise that never resolves, so the component stays in its initial loading render; asserts the "Loading Weather..." text.
+2. **Success** — `fetch` is mocked with `mockImplementation`, branching on the request URL to return a different fake response per city; asserts each city's temperature and condition render (using `findBy*` queries, since the data only appears after the mocked promises resolve and React re-renders).
+3. **Partial failure** — one city's branch returns `ok: false` (simulating a failed request), which exercises the component's real error-handling path; asserts that city shows `"N/A"` / `"Data unavailable"` while the other two cities still render their real data.
+4. **Navigation** — mocks a successful load for all cities, waits for the "Go back" button to appear (it's only rendered once loading finishes), clicks it, and asserts `router.push` was called with `/locations`.
+
+### Components (`tests/components/`)
+
+- **`navbar.test.tsx`** — desktop nav links, mobile menu links hidden until the toggle button is clicked, and that clicking again un-mounts them.
+- **`footer.test.tsx`** — section headings, navigation links, legal page links, copyright text, and the footer logo.
+- **`carousel.test.tsx`** — all slide images render, only one slide is active at a time, and slides auto-advance (and wrap back to the first) using `vi.useFakeTimers()` to fast-forward the rotation interval instead of waiting in real time.
+
+### UI primitives (`tests/components/ui/`)
+
+- **`button.test.tsx`** — renders with the right classes per variant, disabled state, and fires `onClick`.
+- **`input.test.tsx`** — renders with a placeholder and updates its value as the user types.
+- **`label.test.tsx`** — renders and is correctly associated with its field via `htmlFor`.
+- **`card.test.tsx`** — a full card composed from its parts (`CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`) renders all its content.
+- **`form.test.tsx`** — a React Hook Form + Zod-validated form built from `Form`/`FormField`/`FormItem`: renders label and input, shows a validation error on empty submit, and calls `onSubmit` with the typed values on a valid submit.
+
 ## 🌍 API Integration
 
 The application integrates with three different weather data providers to ensure comprehensive coverage:
